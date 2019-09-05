@@ -1,8 +1,6 @@
 # image_forensics
-    This repository is the code of the paper:  "_No one can escape: A general approach to detect tampered and 
-    generated image*"
-# RGB-N
-Code and synthetic dataset generation for the CVPR 2018 paper "Learning Rich Features for Image Manipulation Detection" 
+    This repository is the code of the paper:  "No one can escape: A general approach to detect tampered and 
+    generated image"
 
 # Environment
-tensorflow 0.12.1, python3.5.2, cuda 8.0.44 cudnn 5.1
+    tensorflow 1.13.0, python3.6.8, cuda 10.0 cudnn 7.4
