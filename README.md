@@ -41,10 +41,13 @@ Randomly selected 5123 images from 7491 real images and 5123 tampered images fro
 `Case 2`:
 * trianing set：CASIA 2.0      
 * test set： CASIA2.0
+
 As Case 1, just the training set and test set only contain CASIA2.0
 
 `Case 3`
 * trianing set：CASIA 2.0 + BigGANs(pretrain)  COVERAGE(fine-tune) GPIR(fine-tune)      
 * test set： COVERAGE、GPIR
+
 we ﬁrst evaluate our approach on two datasets separately and then perform cross evaluation on the two datasets(one dataset as training and other as testing).
+
 updating...The work will be completed before November
