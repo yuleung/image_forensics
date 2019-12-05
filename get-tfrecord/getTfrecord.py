@@ -16,7 +16,7 @@ def Scharr(img, threshold):
     x = cv2.Scharr(img, cv2.CV_16S, 1, 0)
     y = cv2.Scharr(img, cv2.CV_16S, 0, 1)
     dst = cv2.addWeighted(abs(x), 0.5, abs(y), 0.5, 0)
-    dst = np.clip(dst,0,threshold)
+    dst = np.clip(dst,0,threshold-1)
     return dst
     
 '''
@@ -24,7 +24,7 @@ def Sobel(img, Ksize = 3):
     x = cv2.Sobel(img, cv2.CV_16S, 1, 0,ksize = Ksize)
     y = cv2.Sobel(img, cv2.CV_16S, 0, 1, ksize = Ksize)
     dst = cv2.addWeighted(absX, 0.5, absY, 0.5, 0)
-    dst = np.clip(dst,0,threshold)
+    dst = np.clip(dst,0,threshold-1)
     return dst
 '''
 
@@ -35,8 +35,8 @@ def getGLCM(imgRGB,threshold):
     imgCb = Scharr(imgYCrCb[:,:,2], threshold)
     #imgCr = Sobel(imgYCrCb[:,:,1], threshold)
     #imgCb = Sobel(imgYCrCb[:,:,2], threshold)
-    GLCMofCr = feature.texture.greycomatrix(imgCr, [1], [0, np.pi / 4, np.pi / 2, 3 * np.pi / 4], levels=threshold+1)[:, :, 0, :]
-    GLCMofCb = feature.texture.greycomatrix(imgCb, [1], [0, np.pi / 4, np.pi / 2, 3 * np.pi / 4], levels=threshold+1)[:, :, 0, :]
+    GLCMofCr = feature.texture.greycomatrix(imgCr, [1], [0, np.pi / 4, np.pi / 2, 3 * np.pi / 4], levels=threshold)[:, :, 0, :]
+    GLCMofCb = feature.texture.greycomatrix(imgCb, [1], [0, np.pi / 4, np.pi / 2, 3 * np.pi / 4], levels=threshold)[:, :, 0, :]
     IMG = np.concatenate((GLCMofCr,GLCMofCb),axis=2)
     return IMG
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     #the path to save the tfrecord file of train, you should change it to your path
     pathOfTestRecord = r'/home/manager/LY/Dataset/tfrecord/test_scharr_192'     
     #this threshold is described in the paper
-    threshold = 191  
+    threshold = 192 
     
     getTfrecord(pathOfTrainFile, pathOfTrainRecord, threshold)
     print('Done of the tfrecord of train!')
