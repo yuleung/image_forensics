@@ -92,7 +92,7 @@ if __name__ == '__main__':
     threshold = 191  
     
     getTfrecord(pathOfTrainFile, pathOfTrainRecord, threshold)
-    print('Done of the tfrecord of test!')
+    print('Done of the tfrecord of train!')
     getTfrecord(pathOfTestFile, pathOfTestRecord, threshold)
     print('Done of the tfrecord of test!')
     print('Done!')
