@@ -50,14 +50,14 @@ def getTheNumOfImgInAEpoch(trainFiles):
 
 
 if __name__ == '__main__':
-    # The path of tfrecord file          ##You should change it to your own path
-    tfrecordDir = '/home/manager/LY/Dataset/tfrecord/train_scharr_192'  
+    # The path of tfrecord file     ##############You should change it to your own path
+    tfrecordDir = '/home/LY/Dataset/tfrecord/train_scharr_192'  
     # The prefix of file 
     trainFile = 'train'
-    # The path of checkpoint file   ##You should change it to your own path
-    checkpointDir = '/home/manager/LY/train_test/checkpoint_scharr_192'
-    # The path of result file       ##You should change it to your own path
-    logDir = '/home/manager/LY/train_test/log_scharr_192/step_accuracy.txt'
+    # The path of checkpoint file   ##############You should change it to your own path
+    checkpointDir = '/home/LY/train_test/checkpoint_scharr_192'
+    # The path of result file       ##############You should change it to your own path
+    logDir = '/home/LY/train_test/log_scharr_192/step_accuracy.txt'
     bacthSize = 56
     threshold = 192
     howManyTimeShuffleFile = 1
@@ -185,6 +185,6 @@ if __name__ == '__main__':
                     File.write(line_str)
                 lossAvg = 0 
                 saver.save(sess, ckptPath, globalStep = globalStep, write_meta_graph=False)
-                if not os.path.exists('/home/manager/LY/train_test/checkpoint_scharr_192/*.meta'):
-                    saver.export_meta_graph('/home/manager/LY/train_test/checkpoint_scharr_192/mode.ckpt.meta')
+                if not os.path.exists('/home/LY/train_test/checkpoint_scharr_192/*.meta'):
+                    saver.export_meta_graph('/home/LY/train_test/checkpoint_scharr_192/mode.ckpt.meta')
 
