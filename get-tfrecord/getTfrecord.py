@@ -81,13 +81,13 @@ def getTfrecord(pathOfFile, pathOfSaveRecord, threshold):
     
 if __name__ == '__main__':
     #the path of the train images, you should change it to your path
-    pathOfTrainFile = r'/home/manager/LY/Dataset/train'   
+    pathOfTrainFile = r'/home/LY/Dataset/train'   
     #the path to save the tfrecord file of train, you should change it to your path
-    pathOfTrainRecord = r'/home/manager/LY/Dataset/train_scharr_192'     
+    pathOfTrainRecord = r'/home/LY/Dataset/train_scharr_192'     
     #the path of the test images, you should change it to your path
-    pathOfTestFile = r'/home/manager/LY/Dataset/test_1000'    
+    pathOfTestFile = r'/home/LY/Dataset/test_1000'    
     #the path to save the tfrecord file of train, you should change it to your path
-    pathOfTestRecord = r'/home/manager/LY/Dataset/tfrecord/test_scharr_192'     
+    pathOfTestRecord = r'/home/LY/Dataset/tfrecord/test_scharr_192'     
     #this threshold is described in the paper
     threshold = 192 
     
