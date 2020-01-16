@@ -50,4 +50,4 @@ As Case 1, just the training set and test set only contain CASIA2.0
 
 we ﬁrst evaluate our approach on two datasets separately and then perform cross evaluation on the two datasets(one dataset as training and other as testing).
 
-updating...The work will be completed before November
+updating...
