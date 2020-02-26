@@ -25,14 +25,14 @@ def getNumEpochTfrecordWithShuffle(Path, Epoch):
     return shuffleNumEpochTfrecordsList
     
 # Parse tfrecord file to rebuild images and labels
-def _parse_function(example_proto, threshold):   
+def _parse_function(example_proto):   
     features = tf.parse_single_example(example_proto,
                                features={
                                     'imaString': tf.FixedLenFeature([], tf.string),
                                     'label': tf.FixedLenFeature([], tf.int64)
                                    })
     image = tf.decode_raw(features['imaString'],tf.float32)
-    image = tf.reshape(image, [threshold, threshold,8])
+    image = tf.reshape(image, [192, 192,8])
     label = features['label']
     return image, label
 
@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     # Read tfrecord file
     dataset = tf.data.TFRecordDataset(fileList)                 
-    dataset = dataset.map(_parse_function(threshold))                       
+    dataset = dataset.map(_parse_function)                       
     dataset = dataset.repeat(howManyRepeatFileList)                 
     dataset = dataset.shuffle(buffer_size = 3000)                   
     dataset = dataset.batch(bacthSize)                                     
